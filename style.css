@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-page: #ffffff;
+  --bg-subtle: #f7f7f7;
+  --text-main: #222222;
+  --text-muted: #717171;
+  --border-color: #dddddd;
+  --brand-primary: #ff385c; /* Tom coral característico do Airbnb */
+  --brand-hover: #e31c5f;
+  --radius-card: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+}
+
+body {
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Cabeçalho Fixo (Topbar) --- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #ebebeb;
+}
+
+.topbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--brand-primary);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-text strong {
+  font-weight: 800;
+}
+
+/* Barra de navegação estilo "Pílula" do Airbnb */
+.pill-nav {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.pill-nav:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.pill-nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.pill-nav a:hover {
+  background-color: var(--bg-subtle);
+}
+
+.pill-nav a.pill-highlight {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  margin-left: 4px;
+}
+
+.pill-nav a.pill-highlight:hover {
+  background-color: var(--brand-hover);
+}
+
+.pill-nav .divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
+}
+
+.topbar-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background-color: var(--bg-subtle);
+}
+
+/* --- Seção Hero / Introdução --- */
+.hero-section {
+  padding: 48px 0 32px;
+}
+
+.hero-header {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-primary);
+  margin-bottom: 10px;
+}
+
+.hero-header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.info-box {
+  background-color: var(--bg-subtle);
+  padding: 24px;
+  border-radius: var(--radius-card);
+  border: 1px solid #efefef;
+}
+
+.info-box h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.section-divider {
+  border: 0;
+  border-top: 1px solid #ebebeb;
+  margin: 24px 0 40px;
+}
+
+/* --- Grade de Instrumentos (Listings) --- */
+.section-title {
+  margin-bottom: 28px;
+}
+
+.section-title h2 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: var(--radius-card);
+  transition: transform 0.25s ease;
+}
+
+.card-media {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #efefef;
+}
+
+.card-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.listing-card:hover .card-media img {
+  transform: scale(1.04);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: #ffffff;
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-header-row h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.rating {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.card-location {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 16px;
+}
+
+.specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #efefef;
+}
+
+.spec-item dt {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.spec-item dd {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* --- Mapa Mental --- */
+.map-section {
+  margin-bottom: 64px;
+}
+
+.markmap-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.markmap {
+  width: 100%;
+  height: 560px;
+}
+
+.markmap > svg {
+  width: 100%;
+  height: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.markmap img {
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+/* --- Rodapé --- */
+.footer {
+  background-color: var(--bg-subtle);
+  border-top: 1px solid #ebebeb;
+  padding: 28px 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .topbar-badge {
+    display: none;
+  }
+
+  .topbar-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-header h1 {
+    font-size: 1.85rem;
+  }
+
+  .listings-grid {
+    grid-template-columns: 1fr;
+  }
+}
